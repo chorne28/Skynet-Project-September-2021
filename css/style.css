@@ -1,0 +1,61 @@
+@import url(navbar.css);
+@import url(section1.css);
+@import url(scroll_section.css);
+@import url(section2.css);
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background: url(../img/pexels-aleksandar-pasaric-325185.jpg);
+  background-size: cover;
+  display: grid;
+  grid: auto / 1em 1fr 1em;
+  gap: 30px;
+}
+.nav {
+  grid-column: 1/-1;
+}
+
+.first-section {
+  grid-column: 1/-1;
+}
+.second-section {
+  grid-column: 1/-1;
+}
+.scroll-section {
+  grid-column: 1/-1;
+}
+
+footer {
+  background: linear-gradient(
+    to left bottom,
+    #000,
+    #001,
+    #002,
+    #002,
+    #001,
+    #000
+  );
+  height: 50px;
+  width: 100%;
+  grid-column: 1 / -1;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+footer img {
+  height: 30%;
+}
+footer h2 {
+  font-size: 1rem;
+  color: white;
+  margin-left: 10px;
+}

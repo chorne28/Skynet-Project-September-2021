@@ -1,0 +1,267 @@
+/*NAVBAR*/
+.wrapper {
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  background: linear-gradient(
+    to left bottom,
+    #000,
+    #001,
+    #002,
+    #002,
+    #001,
+    #000
+  );
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.nav {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  list-style: none;
+  position: relative;
+}
+
+/*LOGO*/
+.nav .logo {
+  grid-column: 1;
+  grid-row: 1;
+  max-height: 100%;
+  max-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 20px;
+}
+
+/*END LOGO*/
+
+/* Hamburger Menu */
+.nav .menu-icon {
+  grid-column: 9;
+  grid-row: 1;
+  cursor: pointer;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} /*END OF NAVBAR*/
+
+.content .links li {
+  list-style: none;
+}
+
+.content .links a {
+  text-decoration: none;
+  font-weight: 900;
+}
+
+/*HAMBURGER MENU START*/
+
+/* Contactati-ne*/
+.phone {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+.phone p {
+  color: #a4b7f8;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 650;
+  font-size: 28px;
+  padding: 0 10px 10px 15px;
+  margin-top: 0.25em;
+}
+.phone img {
+  max-width: 50px;
+  max-height: 50px;
+}
+/* End - Contactati-ne*/
+
+/* Adresa */
+.adresa {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 650;
+  font-size: 28px;
+  padding: 10px 10px 10px 0;
+}
+
+.adresa img {
+  max-width: 50px;
+  max-height: 75px;
+  padding-top: 20px;
+}
+
+.adresa p {
+  text-align: center;
+  color: #a4b7f8;
+  padding: 0 10px 10px 0;
+}
+
+/* End - Adresa */
+
+/* Program */
+.programm {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+.programm p {
+  color: #a4b7f8;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 650;
+  font-size: 28px;
+  padding: 15px 10px 10px 25px;
+}
+.programm img {
+  max-width: 50px;
+  max-height: 50px;
+}
+/* End - Program */
+
+.show-menu {
+  display: none;
+}
+
+/* The Hamburger */
+.menu-icon span,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  background: white;
+  height: 4px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  background: white;
+  height: 4px;
+  width: 2em;
+  border-radius: 2px;
+  transition: all 0.7s ease-in-out;
+}
+
+.menu-icon::before {
+  top: -10px;
+  transform-origin: left top;
+  transform: rotateZ(0deg);
+}
+.menu-icon::after {
+  top: 10px;
+  transform-origin: left bottom;
+}
+
+.checkbox {
+  display: none;
+}
+/* Open-Close Effect */
+#show-menu:checked ~ label::before {
+  background-color: white;
+  transform: rotateZ(40deg);
+}
+#show-menu:checked ~ label::after {
+  background-color: white;
+  transform: rotateZ(-40deg);
+}
+
+#show-menu:checked ~ label span {
+  visibility: hidden;
+}
+
+nav .content .links {
+  background: linear-gradient(
+    to left bottom,
+    #000,
+    #001,
+    #002,
+    #002,
+    #001,
+    #000
+  );
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  max-width: 280px;
+  right: -100%;
+  margin-top: 70px;
+  margin-right: 0;
+  overflow-y: scroll;
+  transition: all 0.7s ease;
+}
+.content .links li ul {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.6s ease;
+  padding-bottom: 7px;
+}
+nav #show-menu:checked ~ .content .links {
+  right: 0%;
+}
+.content .links li {
+  margin-top: 10px;
+  background: linear-gradient(
+    to left bottom,
+    #000,
+    #001,
+    #002,
+    #002,
+    #001,
+    #000
+  );
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(247, 244, 244, 0.4);
+}
+.content .links li a,
+.content .links li label {
+  color: #a4b7f8;
+  line-height: 45px;
+  font-size: 24px;
+  display: block;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 900;
+}
+.content .links li a.desktop-link {
+  display: none;
+}
+.content .links ul,
+.content .links ul ul {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  background: none;
+  max-height: 0px;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+.content .links #contact:checked ~ ul,
+.content .links #address:checked ~ ul,
+.content .links #program:checked ~ ul {
+  max-height: 100%;
+  top: 100px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.8s ease-in-out;
+  border-radius: 5px;
+}
+
+.content .links ul li a {
+  font-size: 18px;
+  line-height: 20px;
+  border-radius: 5px !important;
+}
+
+/*HAMBURGER MENU END*/

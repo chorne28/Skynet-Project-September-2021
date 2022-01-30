@@ -1,0 +1,34 @@
+.scroll-section{
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    overflow: hidden;
+  }
+  section .scroll{
+    
+    display: flex;
+    width: 100%;
+   
+  }
+  section .scroll div{
+   text-transform: uppercase;
+    color: #fff;
+    font-size: 2em;
+    background: linear-gradient(to left bottom, #000,#001,#002,#002,#001,#000);
+    white-space: nowrap;
+    animation: scroll 200s linear 1s infinite;
+    
+  }
+
+
+ @keyframes scroll
+ {
+   0%
+   {
+     transform: translateX(0%);
+   }
+   100%
+   {
+     transform: translateX(-100%);
+   }
+ }

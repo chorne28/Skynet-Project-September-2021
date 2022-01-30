@@ -1,0 +1,201 @@
+   
+
+   /* Carousel*/
+   .second-section{
+   
+    max-width: 90%;
+    max-height: 800px;
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: .2fr 1fr ;
+  }
+  .presentation2{
+  position: relative;
+  grid-column: 1/9;
+  grid-row: 1;
+  max-height: 100px;
+  width: 100%;
+  background: linear-gradient(to left bottom, #000,#001,#002,#002,#001,#000);
+  }
+  .presentation2 h1{
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 100px;
+  font-size: clamp(2rem, 7vw, 7rem);
+  background: url(../img/background-text.jpg);
+  background-size: contain;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+  }
+  
+  .carousel{
+    margin-top: 0.7em;
+    grid-column: 1/9;
+    grid-row: 2;
+    position: relative;
+    min-height: 450px;
+    width: 90%;
+    margin-left: 5%;
+  }
+  
+  .carousel__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carousel__track-container{
+   
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(0);
+    
+  }
+  
+  .carousel__track{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 95%;
+    transition: transform 250ms ease-in;
+  }
+  
+  .carousel__slide{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .carousel__button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  
+  .carousel__button--left{
+    left: -10px;
+    z-index: 2;
+  }
+  .carousel__button--right{
+    right: -10px;
+    z-index: 2;
+  }
+  
+  .carousel__button img{
+    width: 30px;
+    height: 30px;
+   background-color: white;
+   border-radius: 50%;
+  
+  }
+  
+  .carousel__nav{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  
+  }
+  
+  .carousel__indicator{
+    border: 0;
+    border-radius: 50px;
+    width: 10px;
+    height: 12px;
+    background: rgba(0,0,0,.5);
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel__indicator.current-slide{
+    background: rgba(0,0,0,0.9);
+  }
+  
+  .is-hidden{
+    display: none;
+  }
+  
+  /*End of carousel*/
+
+  .carousel__track-container .carousel__slide .overlay{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    cursor: pointer;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius:50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 2px solid #0004;
+    transition: 0.5s;
+  }
+  .carousel__track-container .carousel__slide .overlay:hover{
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+    opacity: 0.9;
+    border-radius: 0;
+    
+  }
+  .carousel__track-container .carousel__slide .overlay:before{
+    content: 'Detalii';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #000;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-delay: 0.5s;
+  }
+  .carousel__track-container .carousel__slide .overlay:hover:before{
+    display: none;
+    transition-delay: 0s;
+  }
+  .carousel__track-container .carousel__slide .content{
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0s;
+   
+  }
+  .carousel__track-container .carousel__slide .overlay:hover ~ .content{
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s;
+    transition-delay: 0.5s;
+    position: absolute;
+    top: 100px;
+  }
+  .carousel__track-container .carousel__slide .content h2{
+    margin: 0;
+    padding: 0;
+
+  }
